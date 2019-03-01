@@ -32,7 +32,7 @@ static void			ft_init_module(t_module *module)
 	module->rra = FALSE;
 	module->rrb = FALSE;
 	module->rrr = FALSE;
-	module->print = TRUE;
+	module->print = FALSE;
 }
 
 static void			ft_init_read_module(t_module *module, char *line)
@@ -70,6 +70,7 @@ static void			ft_init_read(t_module *module)
 	while (get_next_line(0, &line))
 	{
 		ft_init_read_module(module, line);
+		free(line);
 	}
 }
 
